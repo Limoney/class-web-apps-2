@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam&display=swap" rel="stylesheet">
+    <title>Lab2</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="to-do-list">
+            <div class="list-header">
+                TODO List
+            </div>
+            <div class="flash success is-excluded" id="flash"></div>
+            <div class="list-content">
+                <div class="input-wrapper">
+                    <input type="text" id="search-input" placeholder="find task">
+                    <div class="button" id="search-button">search</div>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="add-entry-content" placeholder="enter new task">
+                    <input type="date" id="add-entry-date">
+                    <div class="button" id="add-button">add</div>
+                </div>
+                <hr class="divider">
+                <div class="list-entries" id="list-entries"></div>
+                <template id="entry-template">
+                    <div class="entry" data-uuid="">
+                        <div type="text" class="entry-content"></div>
+                        <div class="entry-date"></div>
+                        <div class="entry-actions">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

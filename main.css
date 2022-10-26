@@ -1,0 +1,153 @@
+:root
+{
+    --primary: #1abc9c;
+    --primary-dark: #16a085;
+    --secondary: #34495e;
+    --secondary-dark: #2c3e50;
+    --error: #e74c3c;
+    --font: #ecf0f1;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    color: var(--font);
+    background-color: var(--secondary-dark);
+    font-family: 'Anek Malayalam', sans-serif;
+    font-size: 0.92em;
+}
+.page-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.to-do-list
+{
+    background-color: var(--secondary);
+    width: 80%;
+    min-height: 400px;
+    box-shadow: 5px 5px 5px 1px #2c3946;
+}
+.list-header
+{
+    padding: 10px;
+    font-size: 1.1em;
+    background-color: var(--primary-dark);
+}
+.list-content
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+.list-entries
+{
+    max-height: 600px;
+    overflow-y: scroll;
+    /* 
+        this is either magic or cheating i cant tell 
+        https://stackoverflow.com/questions/26057925/select-odd-even-child-excluding-the-hidden-child
+    */
+    line-height: 1.7em;
+    background-color: var(--secondary-dark); 
+    background-image: linear-gradient(transparent 50%, var(--secondary) 50%);
+    background-size: 100% 4.75em;
+}
+/* .list-entries .entry:nth-child(odd)
+{
+    background-color: var(--secondary-dark);
+} */
+.entry-content
+{
+    border: none;
+    width: auto;
+}
+.entry-actions
+{
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+.entry
+{
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    padding: 5px;
+    border-radius: 5px;
+}
+.entry > *
+{
+    flex: 1 1 0;
+    text-align: center;
+}
+.entry-actions
+{
+    display: flex;
+    justify-content: center;
+}
+.input-wrapper
+{
+    display: flex;
+    gap: 10px;
+}
+
+.divider
+{
+    color: var(--primary-dark);
+    width: 100%;
+}
+.button
+{
+    padding: 5px;
+    background-color: var(--primary-dark);
+    border-radius: 5px;
+    min-width: 100px;
+    text-align: center;
+}
+.button:hover
+{
+    cursor: pointer;
+    background-color: var(--primary);
+}
+.is-active
+{
+    border-bottom: 2px solid var(--primary-dark);
+}
+.is-hidden
+{
+    opacity: 0;
+    max-height:0 !important;
+    overflow: hidden;
+}
+.is-excluded
+{
+    display: none;
+}
+.flash
+{
+    background-color: var(--error);
+    padding: 10px;
+}
+input
+{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 5px solid var(--primary-dark);
+    box-sizing: border-box;
+    padding: 5px;
+    color: var(--font);
+}
+input:focus,.entry-content
+{
+    outline: none;
+    border-bottom-color: var(--primary);
+}
+.highlight
+{
+    background-color: var(--primary-dark);
+}
